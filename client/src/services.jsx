@@ -16,7 +16,7 @@ export default function Services() {
             <h2>Software Development</h2>
             <p>
                 I can develop software applications using programming languages
-                such as Java, C#, and JavaScript.
+                such as Python, C#, Java and JavaScript.
             </p>
 
             <h2>Database Development</h2>
