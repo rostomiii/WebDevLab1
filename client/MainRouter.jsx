@@ -7,7 +7,9 @@ import Project from './src/project';
 import Layout from './components/Layout';
 
 const MainRouter = () => {
-    return (<div>
+    return (
+    <div>
+        <Layout />
         <Routes>
             <Route exact path="/" element={<Home />} />
             <Route exact path="/about" element={<About />} />
