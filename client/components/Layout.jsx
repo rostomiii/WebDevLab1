@@ -2,14 +2,25 @@ import { Link } from 'react-router-dom';
 
 export default function Layout() {
     return (
-        <div>
-            <h1>My Personal Portfolio</h1>
+        <header className="navbar">
+            <div className="navbar-container">
 
-            <nav>
-                <Link to="/">Home</Link> | <Link to="/about">About</Link> | <Link to="/education">Education</Link> | <Link to="/project">Projects</Link> |  <Link to="/services">Services</Link> | <Link to="/contact">Contact</Link>
-            </nav>
+                {/* Custom portfolio logo */}
+                <Link to="/" className="logo">
+                    RL
+                </Link>
 
-            <hr />
-        </div>
+                {/* Main navigation */}
+                <nav className="nav-links">
+                    <Link to="/">Home</Link>
+                    <Link to="/about">About</Link>
+                    <Link to="/project">Projects</Link>
+                    <Link to="/education">Education</Link>
+                    <Link to="/services">Services</Link>
+                    <Link to="/contact">Contact</Link>
+                </nav>
+
+            </div>
+        </header>
     );
 }
