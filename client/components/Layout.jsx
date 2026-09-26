@@ -6,12 +6,7 @@ export default function Layout() {
             <h1>My Personal Portfolio</h1>
 
             <nav>
-                <Link to="/">Home</Link> | 
-                <Link to="/about">About</Link> | 
-                <Link to="/education">Education</Link> | 
-                <Link to="/project">Projects</Link> | 
-                <Link to="/services">Services</Link> | 
-                <Link to="/contact">Contact</Link>
+                <Link to="/">Home</Link> | <Link to="/about">About</Link> | <Link to="/education">Education</Link> | <Link to="/project">Projects</Link> |  <Link to="/services">Services</Link> | <Link to="/contact">Contact</Link>
             </nav>
 
             <hr />
