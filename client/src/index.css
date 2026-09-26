@@ -427,3 +427,93 @@ code {
         grid-template-columns: 1fr;
     }
 }
+
+/* =========================
+   Education Page
+   ========================= */
+
+.education-page {
+    min-height: 100vh;
+    padding: 60px 10%;
+}
+
+.education-header {
+    max-width: 700px;
+    margin: 0 auto 50px;
+    text-align: center;
+}
+
+.education-header h1 {
+    font-size: 42px;
+    margin: 10px 0;
+}
+
+.education-header p {
+    line-height: 1.6;
+}
+
+.education-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.education-card {
+    display: flex;
+    gap: 30px;
+
+    margin-bottom: 30px;
+    padding: 30px;
+
+    background-color: white;
+    border-radius: 10px;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.education-year {
+    min-width: 100px;
+
+    color: #2563eb;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.education-content h2 {
+    margin: 0 0 5px;
+    font-size: 24px;
+}
+
+.education-content h3 {
+    margin: 0 0 15px;
+    color: #6b7280;
+}
+
+.education-content p {
+    line-height: 1.6;
+}
+
+/* Skills displayed under each education item */
+.education-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+.education-skills span {
+    padding: 6px 10px;
+
+    background-color: #e5e7eb;
+    border-radius: 5px;
+
+    font-size: 13px;
+    font-weight: bold;
+}
+
+/* Mobile layout */
+@media (max-width: 700px) {
+    .education-card {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
