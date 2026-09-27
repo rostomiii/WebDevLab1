@@ -4,8 +4,11 @@ export default function About() {
             <section className="about-container">
 
                 {/* Profile image placeholder */}
-                <div className="profile-placeholder">
-                    <span>RL</span>
+                <div className="profile-image">
+                    <img
+                        src="/images/profile.png"
+                        alt="Rostom Lamadrid III"
+                    />
                 </div>
 
                 {/* About Me information */}

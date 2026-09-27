@@ -7,7 +7,7 @@ export default function Home() {
                 <div className="hero-content">
                     <p className="hero-intro">Hello, I'm</p>
 
-                    <h1>Rostom Lamadrid</h1>
+                    <h1>Rostom Lamadrid III</h1>
 
                     <h2>Artificial Intelligence - Software Engineering Student</h2>
 

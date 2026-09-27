@@ -337,3 +337,31 @@
         gap: 0;
     }
 }
+
+/* =========================
+   Card Text Color Fixes
+   ========================= */
+
+.project-card,
+.education-card,
+.service-card,
+.contact-form {
+    color: #374151;
+}
+
+.project-card h2,
+.education-card h2,
+.service-card h2,
+.contact-form h2 {
+    color: #111827;
+}
+
+.education-card h3 {
+    color: #4b5563;
+}
+
+.project-card p,
+.education-card p,
+.service-card p {
+    color: #6b7280;
+}
