@@ -38,9 +38,7 @@ export default function About() {
 
                     {/* Opens the resume PDF in a new browser tab */}
                     <a
-                        href="./public/Rostomlamadrid.pdf"
-                        target="_blank"
-                        rel="noopener noreferrer"
+                        href="/Rostomlamadrid.pdf"
                         className="resume-button"
                     >
                         View My Resume
