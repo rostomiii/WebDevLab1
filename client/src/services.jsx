@@ -1,28 +1,84 @@
 export default function Services() {
     return (
-        <div>
-            <h1>My Services</h1>
+        <main className="services-page">
 
-            <p>
-                I offer a variety of software development and technology services.
-            </p>
+            {/* Services Page Header */}
+            <section className="services-header">
+                <p className="section-label">WHAT I CAN DO</p>
+                <h1>My Services</h1>
 
-            <h2>Web Development</h2>
-            <p>
-                I can create responsive websites using HTML, CSS, JavaScript,
-                and React.
-            </p>
+                <p>
+                    I offer technical services based on my experience and
+                    education in software engineering, web development,
+                    databases, and programming.
+                </p>
+            </section>
 
-            <h2>Software Development</h2>
-            <p>
-                I can develop software applications using programming languages
-                such as Python, C#, Java and JavaScript.
-            </p>
+            {/* Services Cards */}
+            <section className="services-container">
 
-            <h2>Database Development</h2>
-            <p>
-                I can design and work with relational databases using SQL.
-            </p>
-        </div>
+                {/* Web Development */}
+                <div className="service-card">
+                    <div className="service-icon">&lt;/&gt;</div>
+
+                    <h2>Web Development</h2>
+
+                    <p>
+                        Building responsive and user-friendly websites using
+                        modern web technologies.
+                    </p>
+
+                    <div className="service-skills">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                        <span>React</span>
+                    </div>
+                </div>
+
+
+                {/* Software Development */}
+                <div className="service-card">
+                    <div className="service-icon">{"{ }"}</div>
+
+                    <h2>Software Development</h2>
+
+                    <p>
+                        Developing software solutions using programming
+                        concepts, object-oriented programming, and
+                        problem-solving techniques.
+                    </p>
+
+                    <div className="service-skills">
+                        <span>C#</span>
+                        <span>JavaScript</span>
+                        <span>OOP</span>
+                        <span>Git</span>
+                    </div>
+                </div>
+
+
+                {/* Database Development */}
+                <div className="service-card">
+                    <div className="service-icon">DB</div>
+
+                    <h2>Database Development</h2>
+
+                    <p>
+                        Designing and working with relational databases,
+                        including database queries, relationships, and
+                        data organization.
+                    </p>
+
+                    <div className="service-skills">
+                        <span>SQL</span>
+                        <span>Oracle</span>
+                        <span>Database Design</span>
+                        <span>Normalization</span>
+                    </div>
+                </div>
+
+            </section>
+        </main>
     );
 }
