@@ -6,27 +6,21 @@ export default function Education() {
             <section className="education-header">
                 <p className="section-label">MY BACKGROUND</p>
                 <h1>Education</h1>
-
                 <p>
                     My educational background reflects my experience across
-                    software engineering, aviation, and automotive technology.
+                    software engineering, automotive technology, and aviation.
                 </p>
             </section>
 
-            {/* Education Timeline */}
+            {/* Education Timeline - Sorted from newest to oldest */}
             <section className="education-container">
 
-                {/* Artificial Intelligence - Software Engineering */}
+                {/* Current Education */}
                 <div className="education-card">
-                    <div className="education-year">
-                        Present
-                    </div>
+                    <div className="education-year">Present</div>
 
                     <div className="education-content">
-                        <h2>
-                            Artificial Intelligence - Software Engineering
-                        </h2>
-
+                        <h2>Artificial Intelligence - Software Engineering</h2>
                         <h3>Centennial College</h3>
 
                         <p>
@@ -47,43 +41,12 @@ export default function Education() {
                 </div>
 
 
-                {/* Aviation Studies */}
+                {/* Motive Power - 2023 */}
                 <div className="education-card">
-                    <div className="education-year">
-                        2020 - 2021
-                    </div>
-
-                    <div className="education-content">
-                        <h2>
-                            Bachelor of Science in Aviation - Major in Flying
-                        </h2>
-
-                        <h3>Airlink International Aviation School</h3>
-
-                        <p>
-                            Completed 40 units of undergraduate studies in
-                            aviation, gaining foundational knowledge in civil
-                            aviation, aviation law, and applied physics.
-                        </p>
-
-                        <div className="education-skills">
-                            <span>Civil Aviation</span>
-                            <span>Aviation Law</span>
-                            <span>Applied Physics</span>
-                        </div>
-                    </div>
-                </div>
-
-
-                {/* Motive Power */}
-                <div className="education-card">
-                    <div className="education-year">
-                        2023
-                    </div>
+                    <div className="education-year">2023</div>
 
                     <div className="education-content">
                         <h2>Motive Power</h2>
-
                         <h3>Centennial College</h3>
 
                         <p>
@@ -97,6 +60,31 @@ export default function Education() {
                             <span>Automotive Technology</span>
                             <span>Technical Skills</span>
                             <span>Problem Solving</span>
+                        </div>
+                    </div>
+                </div>
+
+
+                {/* Aviation Studies - 2020 to 2021 */}
+                <div className="education-card">
+                    <div className="education-year">2020 - 2021</div>
+
+                    <div className="education-content">
+                        <h2>
+                            Bachelor of Science in Aviation - Major in Flying
+                        </h2>
+                        <h3>Airlink International Aviation School</h3>
+
+                        <p>
+                            Completed 40 units of undergraduate studies in
+                            aviation, gaining foundational knowledge in civil
+                            aviation, aviation law, and applied physics.
+                        </p>
+
+                        <div className="education-skills">
+                            <span>Civil Aviation</span>
+                            <span>Aviation Law</span>
+                            <span>Applied Physics</span>
                         </div>
                     </div>
                 </div>

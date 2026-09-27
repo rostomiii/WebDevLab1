@@ -1,122 +1,126 @@
+/* =========================================================
+   PERSONAL PORTFOLIO - MAIN STYLESHEET
+   Author: Rostom Lamadrid III
+
+   This stylesheet contains the main visual design for the
+   portfolio website, including the navigation bar and the
+   Home, About, Projects, Education, Services, and Contact
+   pages.
+   ========================================================= */
+
+
+/* =========================================================
+   1. GLOBAL THEME
+   Reusable colors and fonts are stored as variables so the
+   website maintains a consistent visual style.
+   ========================================================= */
+
 :root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+    /* Main backgrounds */
+    --bg-primary: #12141a;
+    --bg-secondary: #1f2937;
+    --bg-card: #ffffff;
 
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
+    /* Text used on dark backgrounds */
+    --text-primary: #f9fafb;
+    --text-secondary: #cbd5e1;
 
-  font: 18px/145% var(--sans);
-  letter-spacing: 0.18px;
-  color-scheme: light dark;
-  color: var(--text);
-  background: var(--bg);
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    /* Text used on light backgrounds */
+    --text-dark: #111827;
+    --text-card: #4b5563;
+    --text-muted: #6b7280;
 
-  @media (max-width: 1024px) {
-    font-size: 16px;
-  }
+    /* Main accent colors */
+    --accent: #4f6bea;
+    --accent-hover: #3f5bd5;
+    --accent-light: #60a5fa;
+
+    /* Form, border, and tag colors */
+    --border: #d1d5db;
+    --tag-bg: #e5e7eb;
+
+    /* Consistent font used throughout the website */
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
-    --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
-  }
 
-  #social .button-icon {
-    filter: invert(1) brightness(2);
-  }
+/* =========================================================
+   2. GLOBAL STYLES
+   These rules provide consistent spacing, typography, and
+   background colors throughout the entire portfolio.
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    background-color: var(--bg-primary);
 }
 
 body {
-  margin: 0;
+    margin: 0;
+    padding: 0;
+
+    min-width: 320px;
+    min-height: 100vh;
+
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
 }
 
 #root {
-  width: 1126px;
-  max-width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  border-inline: 1px solid var(--border);
-  min-height: 100svh;
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
+    width: 100%;
+    min-height: 100vh;
+    margin: 0;
+
+    background-color: var(--bg-primary);
 }
 
 h1,
-h2 {
-  font-family: var(--heading);
-  font-weight: 500;
-  color: var(--text-h);
+h2,
+h3 {
+    margin-top: 0;
+    color: var(--text-primary);
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-h1 {
-  font-size: 56px;
-  letter-spacing: -1.68px;
-  margin: 32px 0;
-  @media (max-width: 1024px) {
-    font-size: 36px;
-    margin: 20px 0;
-  }
-}
-h2 {
-  font-size: 24px;
-  line-height: 118%;
-  letter-spacing: -0.24px;
-  margin: 0 0 8px;
-  @media (max-width: 1024px) {
-    font-size: 20px;
-  }
-}
 p {
-  margin: 0;
+    margin-top: 0;
+    color: var(--text-secondary);
 }
 
-code,
-.counter {
-  font-family: var(--mono);
-  display: inline-flex;
-  border-radius: 4px;
-  color: var(--text-h);
+a {
+    font-family: inherit;
 }
 
-code {
-  font-size: 15px;
-  line-height: 135%;
-  padding: 4px 8px;
-  background: var(--code-bg);
+/* Small blue label displayed above page headings */
+.section-label {
+    color: var(--accent);
+    font-weight: bold;
+    letter-spacing: 2px;
 }
 
 
-/* =========================
-   Navigation Bar
-   ========================= */
+/* =========================================================
+   3. NAVIGATION BAR
+   The navigation bar appears at the top of every page.
+   ========================================================= */
 
 .navbar {
-    background-color: #1f2937;
+    width: 100%;
+    background-color: var(--bg-secondary);
     padding: 15px 0;
 }
 
@@ -130,7 +134,7 @@ code {
     align-items: center;
 }
 
-/* Custom Logo */
+/* Custom RL portfolio logo */
 .logo {
     width: 50px;
     height: 50px;
@@ -139,19 +143,20 @@ code {
     justify-content: center;
     align-items: center;
 
-    background-color: #2563eb;
+    background-color: var(--accent);
     color: white;
 
     font-size: 20px;
     font-weight: bold;
-
     text-decoration: none;
+
     border-radius: 8px;
 }
 
-/* Navigation Links */
+/* Main navigation links */
 .nav-links {
     display: flex;
+    align-items: center;
     gap: 25px;
 }
 
@@ -159,119 +164,160 @@ code {
     color: white;
     text-decoration: none;
     font-size: 16px;
+
+    transition: color 0.2s ease;
 }
 
 .nav-links a:hover {
-    color: #60a5fa;
+    color: var(--accent-light);
 }
 
-/* =========================
-   Home Page
-   ========================= */
+
+/* =========================================================
+   4. HOME PAGE
+   Contains the introduction, portfolio buttons, and mission
+   statement.
+   ========================================================= */
 
 .home {
     min-height: 100vh;
+    background-color: var(--bg-primary);
 }
 
+/* Main introduction section */
 .hero {
     min-height: 70vh;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     padding: 60px 10%;
 }
 
 .hero-content {
+    width: 100%;
     max-width: 800px;
+
     text-align: center;
 }
 
 .hero-intro {
-    font-size: 20px;
     margin-bottom: 10px;
+
+    color: var(--text-secondary);
+    font-size: 20px;
 }
 
 .hero h1 {
-    font-size: 52px;
     margin: 0;
+
+    color: var(--text-primary);
+    font-size: 52px;
 }
 
 .hero h2 {
-    font-size: 24px;
     margin: 15px 0;
+
+    color: var(--text-primary);
+    font-size: 24px;
 }
 
 .hero-description {
+    margin: 25px 0;
+
+    color: var(--text-secondary);
     font-size: 18px;
     line-height: 1.6;
-    margin: 25px 0;
 }
 
+/* Home page navigation buttons */
 .hero-buttons {
     display: flex;
     justify-content: center;
     gap: 15px;
+
     margin-top: 30px;
 }
 
 .primary-button,
 .secondary-button {
     padding: 12px 24px;
+
     border-radius: 6px;
+
     text-decoration: none;
     font-weight: bold;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease;
 }
 
 .primary-button {
-    background-color: #2563eb;
+    background-color: var(--accent);
     color: white;
-}
-
-.secondary-button {
-    border: 2px solid #2563eb;
-    color: #2563eb;
 }
 
 .primary-button:hover {
-    background-color: #1d4ed8;
+    background-color: var(--accent-hover);
+}
+
+.secondary-button {
+    border: 2px solid var(--accent);
+
+    color: var(--accent);
+    background-color: transparent;
 }
 
 .secondary-button:hover {
-    background-color: #2563eb;
+    background-color: var(--accent);
     color: white;
 }
 
-/* Mission Section */
+
+/* Mission statement displayed below the hero section */
 .mission {
     padding: 60px 10%;
+
+    background-color: var(--bg-secondary);
     text-align: center;
-    background-color: #f3f4f6;
 }
 
 .mission h2 {
-    font-size: 32px;
     margin-bottom: 20px;
+
+    color: var(--text-primary);
+    font-size: 32px;
 }
 
 .mission p {
     max-width: 700px;
     margin: 0 auto;
+
+    color: var(--text-secondary);
     font-size: 18px;
     line-height: 1.6;
 }
 
-/* =========================
-   About Me Page
-   ========================= */
+
+/* =========================================================
+   5. ABOUT PAGE
+   Displays the professional profile image, introduction,
+   and resume button.
+   ========================================================= */
 
 .about-page {
-    min-height: 80vh;
+    min-height: calc(100vh - 80px);
+
     display: flex;
     align-items: center;
+
     padding: 60px 10%;
 }
 
 .about-container {
+    width: 100%;
     max-width: 1100px;
     margin: 0 auto;
 
@@ -280,488 +326,10 @@ code {
     gap: 60px;
 }
 
-/* Temporary profile image */
-.profile-placeholder {
-    min-width: 300px;
-    height: 350px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    background-color: #e5e7eb;
-    border-radius: 15px;
-
-    font-size: 80px;
-    font-weight: bold;
-    color: #2563eb;
-}
-
-.about-content {
-    max-width: 650px;
-}
-
-.section-label {
-    color: #2563eb;
-    font-weight: bold;
-    letter-spacing: 2px;
-}
-
-.about-content h1 {
-    font-size: 42px;
-    margin: 10px 0;
-}
-
-.about-content h2 {
-    font-size: 20px;
-    margin-bottom: 25px;
-}
-
-.about-content p {
-    font-size: 17px;
-    line-height: 1.7;
-}
-
-.resume-button {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 12px 24px;
-
-    background-color: #2563eb;
-    color: white;
-
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 6px;
-}
-
-.resume-button:hover {
-    background-color: #1d4ed8;
-}
-
-/* =========================
-   Projects Page
-   ========================= */
-
-.projects-page {
-    padding: 60px 10%;
-    min-height: 100vh;
-}
-
-.projects-header {
-    max-width: 700px;
-    margin: 0 auto 50px;
-    text-align: center;
-}
-
-.projects-header h1 {
-    font-size: 42px;
-    margin: 10px 0;
-}
-
-.projects-header p {
-    line-height: 1.6;
-}
-
-.projects-container {
-    max-width: 1200px;
-    margin: 0 auto;
-
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-}
-
-.project-card {
-    background-color: white;
-    border-radius: 10px;
-    overflow: hidden;
-
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-
-    transition: transform 0.3s ease;
-}
-
-.project-card:hover {
-    transform: translateY(-5px);
-}
-
-.project-card img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-}
-
-.project-content {
-    padding: 25px;
-}
-
-.project-content h2 {
-    margin-top: 0;
-    font-size: 24px;
-}
-
-.project-content p {
-    line-height: 1.6;
-}
-
-.project-technologies {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-top: 20px;
-}
-
-.project-technologies span {
-    background-color: #e5e7eb;
-    padding: 6px 10px;
-    border-radius: 5px;
-
-    font-size: 13px;
-    font-weight: bold;
-}
-
-/* Adjust project cards for smaller screens */
-@media (max-width: 900px) {
-    .projects-container {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* =========================
-   Education Page
-   ========================= */
-
-.education-page {
-    min-height: 100vh;
-    padding: 60px 10%;
-}
-
-.education-header {
-    max-width: 700px;
-    margin: 0 auto 50px;
-    text-align: center;
-}
-
-.education-header h1 {
-    font-size: 42px;
-    margin: 10px 0;
-}
-
-.education-header p {
-    line-height: 1.6;
-}
-
-.education-container {
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-.education-card {
-    display: flex;
-    gap: 30px;
-
-    margin-bottom: 30px;
-    padding: 30px;
-
-    background-color: white;
-    border-radius: 10px;
-
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-.education-year {
-    min-width: 100px;
-
-    color: #2563eb;
-    font-size: 18px;
-    font-weight: bold;
-}
-
-.education-content h2 {
-    margin: 0 0 5px;
-    font-size: 24px;
-}
-
-.education-content h3 {
-    margin: 0 0 15px;
-    color: #6b7280;
-}
-
-.education-content p {
-    line-height: 1.6;
-}
-
-/* Skills displayed under each education item */
-.education-skills {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-top: 20px;
-}
-
-.education-skills span {
-    padding: 6px 10px;
-
-    background-color: #e5e7eb;
-    border-radius: 5px;
-
-    font-size: 13px;
-    font-weight: bold;
-}
-
-/* Mobile layout */
-@media (max-width: 700px) {
-    .education-card {
-        flex-direction: column;
-        gap: 10px;
-    }
-}
-
-/* =========================
-   Services Page
-   ========================= */
-
-.services-page {
-    min-height: 100vh;
-    padding: 60px 10%;
-}
-
-.services-header {
-    max-width: 700px;
-    margin: 0 auto 50px;
-    text-align: center;
-}
-
-.services-header h1 {
-    font-size: 42px;
-    margin: 10px 0;
-}
-
-.services-header p {
-    line-height: 1.6;
-}
-
-.services-container {
-    max-width: 1100px;
-    margin: 0 auto;
-
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-}
-
-.service-card {
-    padding: 35px 25px;
-
-    background-color: white;
-    border-radius: 10px;
-
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-
-    transition: transform 0.3s ease;
-}
-
-.service-card:hover {
-    transform: translateY(-5px);
-}
-
-.service-icon {
-    width: 60px;
-    height: 60px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    margin-bottom: 20px;
-
-    background-color: #2563eb;
-    color: white;
-
-    border-radius: 10px;
-
-    font-size: 20px;
-    font-weight: bold;
-}
-
-.service-card h2 {
-    margin-bottom: 15px;
-}
-
-.service-card p {
-    line-height: 1.6;
-}
-
-.service-skills {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-
-    margin-top: 20px;
-}
-
-.service-skills span {
-    padding: 6px 10px;
-
-    background-color: #e5e7eb;
-    border-radius: 5px;
-
-    font-size: 13px;
-    font-weight: bold;
-}
-
-/* Services mobile layout */
-@media (max-width: 900px) {
-    .services-container {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* =========================
-   Contact Page Final Styling
-   ========================= */
-
-.contact-container {
-    max-width: 1100px;
-    margin: 0 auto;
-
-    display: grid;
-    grid-template-columns: 1fr 1.5fr;
-    gap: 40px;
-
-    align-items: stretch;
-}
-
-.contact-info {
-    background-color: #1f2937;
-    color: white;
-
-    padding: 35px;
-    border-radius: 10px;
-
-    text-align: left;
-}
-
-.contact-info h2,
-.contact-info h3 {
-    color: white;
-}
-
-.contact-info p {
-    color: #cbd5e1;
-}
-
-.contact-form {
-    background-color: white;
-
-    padding: 35px;
-    border-radius: 10px;
-
-    text-align: left;
-}
-
-.form-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 20px;
-}
-
-.form-group label {
-    color: #374151;
-    font-weight: bold;
-    margin-bottom: 8px;
-}
-
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    box-sizing: border-box;
-
-    padding: 12px;
-
-    background-color: white;
-    color: #111827;
-
-    border: 1px solid #d1d5db;
-    border-radius: 6px;
-
-    font-size: 16px;
-}
-
-.submit-button {
-    background-color: #4f6bea;
-    color: white;
-
-    padding: 12px 24px;
-
-    border: none;
-    border-radius: 6px;
-
-    font-size: 16px;
-    font-weight: bold;
-
-    cursor: pointer;
-}
-
-.submit-button:hover {
-    background-color: #3f5bd5;
-}
-
-@media (max-width: 800px) {
-    .contact-container {
-        grid-template-columns: 1fr;
-    }
-
-    .form-row {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* Mission Section */
-.mission {
-    padding: 60px 10%;
-    text-align: center;
-    background-color: #1f2937;
-}
-
-.mission h2 {
-    color: white;
-    font-size: 32px;
-    margin-bottom: 20px;
-}
-
-.mission p {
-    max-width: 700px;
-    margin: 0 auto;
-
-    color: #cbd5e1;
-    font-size: 18px;
-    line-height: 1.6;
-}
-
-/* Project card text fix */
-.project-card h2 {
-    color: #111827;
-}
-
-.project-card p {
-    color: #6b7280;
-}
-
-.project-card strong {
-    color: #4b5563;
-}
-
-/* Professional Profile Image */
+/* Professional profile image */
 .profile-image {
-    min-width: 300px;
+    flex-shrink: 0;
+
     width: 300px;
     height: 350px;
 
@@ -773,19 +341,682 @@ code {
     width: 100%;
     height: 100%;
 
+    display: block;
+
     object-fit: cover;
     object-position: center top;
 }
 
+.about-content {
+    max-width: 650px;
+}
+
+.about-content h1 {
+    margin: 10px 0;
+
+    color: var(--text-primary);
+    font-size: 42px;
+}
+
+.about-content h2 {
+    margin-bottom: 25px;
+
+    color: var(--text-primary);
+    font-size: 20px;
+}
+
+.about-content p {
+    color: var(--text-secondary);
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+/* Link to the PDF resume */
+.resume-button {
+    display: inline-block;
+
+    margin-top: 20px;
+    padding: 12px 24px;
+
+    background-color: var(--accent);
+    color: white;
+
+    text-decoration: none;
+    font-weight: bold;
+
+    border-radius: 6px;
+
+    transition: background-color 0.2s ease;
+}
+
+.resume-button:hover {
+    background-color: var(--accent-hover);
+}
+
+
+/* =========================================================
+   6. PROJECTS PAGE
+   Uses a three-column card layout to display portfolio
+   projects and the technologies used in each project.
+   ========================================================= */
+
+.projects-page {
+    min-height: 100vh;
+    padding: 60px 10%;
+}
+
+.projects-header {
+    max-width: 700px;
+    margin: 0 auto 50px;
+
+    text-align: center;
+}
+
+.projects-header h1 {
+    margin: 10px 0;
+
+    color: var(--text-primary);
+    font-size: 42px;
+}
+
+.projects-header p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.projects-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+/* Individual project card */
+.project-card {
+    background-color: var(--bg-card);
+    color: var(--text-card);
+
+    border-radius: 10px;
+    overflow: hidden;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Project screenshots */
+.project-card img {
+    width: 100%;
+    height: 220px;
+
+    display: block;
+
+    background-color: #f3f4f6;
+
+    object-fit: contain;
+}
+
+.project-content {
+    padding: 25px;
+}
+
+.project-content h2 {
+    margin-top: 0;
+    margin-bottom: 15px;
+
+    color: var(--text-dark);
+    font-size: 24px;
+}
+
+.project-content p {
+    color: var(--text-card);
+    line-height: 1.6;
+}
+
+.project-content strong {
+    color: var(--text-dark);
+}
+
+/* Technology tags displayed on project cards */
+.project-technologies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    margin-top: 20px;
+}
+
+.project-technologies span {
+    padding: 6px 10px;
+
+    background-color: var(--tag-bg);
+    color: var(--text-dark);
+
+    border-radius: 5px;
+
+    font-size: 13px;
+    font-weight: bold;
+}
+
+
+/* =========================================================
+   7. EDUCATION PAGE
+   White education cards use dark text to provide strong
+   contrast and improve readability.
+   ========================================================= */
+
+.education-page {
+    min-height: 100vh;
+    padding: 60px 10%;
+}
+
+.education-header {
+    max-width: 700px;
+    margin: 0 auto 50px;
+
+    text-align: center;
+}
+
+.education-header h1 {
+    margin: 10px 0;
+
+    color: var(--text-primary);
+    font-size: 42px;
+}
+
+.education-header p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.education-container {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Individual education entry */
+.education-card {
+    display: flex;
+    gap: 30px;
+
+    margin-bottom: 30px;
+    padding: 30px;
+
+    background-color: var(--bg-card);
+    color: var(--text-card);
+
+    border-radius: 10px;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.education-year {
+    min-width: 100px;
+
+    color: var(--accent);
+
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Dark headings are used because education cards are white */
+.education-content h2 {
+    margin: 0 0 5px;
+
+    color: var(--text-dark);
+    font-size: 24px;
+}
+
+.education-content h3 {
+    margin: 0 0 15px;
+
+    color: var(--text-muted);
+    font-size: 17px;
+}
+
+.education-content p {
+    color: var(--text-card);
+    line-height: 1.6;
+}
+
+/* Skills learned during each program */
+.education-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    margin-top: 20px;
+}
+
+.education-skills span {
+    padding: 6px 10px;
+
+    background-color: var(--tag-bg);
+    color: var(--text-dark);
+
+    border-radius: 5px;
+
+    font-size: 13px;
+    font-weight: bold;
+}
+
+
+/* =========================================================
+   8. SERVICES PAGE
+   Displays technical services using consistent white cards
+   with high-contrast text.
+   ========================================================= */
+
+.services-page {
+    min-height: 100vh;
+    padding: 60px 10%;
+}
+
+.services-header {
+    max-width: 700px;
+    margin: 0 auto 50px;
+
+    text-align: center;
+}
+
+.services-header h1 {
+    margin: 10px 0;
+
+    color: var(--text-primary);
+    font-size: 42px;
+}
+
+.services-header p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.services-container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+/* Individual service card */
+.service-card {
+    padding: 35px 25px;
+
+    background-color: var(--bg-card);
+    color: var(--text-card);
+
+    border-radius: 10px;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Icon displayed at the top of each service card */
+.service-icon {
+    width: 60px;
+    height: 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 20px;
+
+    background-color: var(--accent);
+    color: white;
+
+    border-radius: 10px;
+
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.service-card h2 {
+    margin-bottom: 15px;
+
+    color: var(--text-dark);
+    font-size: 24px;
+}
+
+.service-card p {
+    color: var(--text-card);
+    line-height: 1.6;
+}
+
+/* Technologies related to each service */
+.service-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    margin-top: 20px;
+}
+
+.service-skills span {
+    padding: 6px 10px;
+
+    background-color: var(--tag-bg);
+    color: var(--text-dark);
+
+    border-radius: 5px;
+
+    font-size: 13px;
+    font-weight: bold;
+}
+
+
+/* =========================================================
+   9. CONTACT PAGE
+   Contains the contact information panel and interactive
+   contact form.
+   ========================================================= */
+
+.contact-page {
+    min-height: 100vh;
+    padding: 60px 10%;
+}
+
+.contact-header {
+    max-width: 700px;
+    margin: 0 auto 50px;
+
+    text-align: center;
+}
+
+.contact-header h1 {
+    margin: 10px 0;
+
+    color: var(--text-primary);
+    font-size: 42px;
+}
+
+.contact-header p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.contact-container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 40px;
+
+    align-items: stretch;
+}
+
+
+/* Contact information displayed beside the form */
+.contact-info {
+    padding: 35px;
+
+    background-color: var(--bg-secondary);
+    color: white;
+
+    border-radius: 10px;
+
+    text-align: left;
+}
+
+.contact-info h2,
+.contact-info h3 {
+    color: var(--text-primary);
+}
+
+.contact-info h2 {
+    margin-bottom: 20px;
+}
+
+.contact-info h3 {
+    margin-bottom: 5px;
+}
+
+.contact-info p {
+    color: var(--text-secondary);
+}
+
+.contact-detail {
+    margin-top: 25px;
+}
+
+
+/* Main contact form */
+.contact-form {
+    padding: 35px;
+
+    background-color: var(--bg-card);
+    color: var(--text-dark);
+
+    border-radius: 10px;
+
+    text-align: left;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Displays first and last name fields beside each other */
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    margin-bottom: 8px;
+
+    color: #374151;
+
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+
+    background-color: white;
+    color: var(--text-dark);
+
+    border: 1px solid var(--border);
+    border-radius: 6px;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+/* Highlights the field currently selected by the user */
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--accent);
+
+    box-shadow: 0 0 0 3px rgba(79, 107, 234, 0.15);
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+/* Contact form submit button */
+.submit-button {
+    padding: 12px 24px;
+
+    background-color: var(--accent);
+    color: white;
+
+    border: none;
+    border-radius: 6px;
+
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: background-color 0.2s ease;
+}
+
+.submit-button:hover {
+    background-color: var(--accent-hover);
+}
+
+
+/* =========================================================
+   10. RESPONSIVE DESIGN
+   Adjusts the layout for tablets and mobile devices so the
+   portfolio remains readable on smaller screens.
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    /* Display project and service cards in one column */
+    .projects-container,
+    .services-container {
+        grid-template-columns: 1fr;
+    }
+
+    /* Reduce large page padding on tablets */
+    .projects-page,
+    .education-page,
+    .services-page,
+    .contact-page {
+        padding-left: 6%;
+        padding-right: 6%;
+    }
+}
+
+
 @media (max-width: 800px) {
+
+    /* Stack the profile image above the About text */
     .about-container {
         flex-direction: column;
         text-align: center;
     }
 
     .profile-image {
-        min-width: 250px;
         width: 250px;
         height: 300px;
+    }
+
+    /* Stack contact information and form */
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+
+    /* Stack first and last name fields */
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@media (max-width: 700px) {
+
+    /* Stack education year above the education details */
+    .education-card {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    /* Make the navigation bar easier to use on small screens */
+    .navbar-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-links {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px 18px;
+    }
+
+    /* Stack Home page buttons */
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .primary-button,
+    .secondary-button {
+        width: 220px;
+        text-align: center;
+    }
+}
+
+
+@media (max-width: 500px) {
+
+    /* Reduce spacing and heading sizes on phones */
+    .hero,
+    .about-page,
+    .projects-page,
+    .education-page,
+    .services-page,
+    .contact-page {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .hero h2 {
+        font-size: 20px;
+    }
+
+    .about-content h1,
+    .projects-header h1,
+    .education-header h1,
+    .services-header h1,
+    .contact-header h1 {
+        font-size: 34px;
+    }
+
+    .project-content,
+    .education-card,
+    .service-card,
+    .contact-info,
+    .contact-form {
+        padding: 25px 20px;
     }
 }
